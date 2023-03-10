@@ -1,8 +1,6 @@
 # 별찍기로 만든 피라미드
 
 ## 알고리즘
-반복문(for)을 총 3개를 사용하여 줄바꿈, 공백출력, 별출력을 하는것이다. <br/>
-3단 피라미드를 출력한다고 가정했을 때, <br/>
 
 
 ## Java Code
@@ -33,9 +31,28 @@ public class Quiz2 {
 	}
 }
 ```
-## 코드 해석
+## 코드 출력
+![image](https://user-images.githubusercontent.com/107795830/224196508-b4b51e3c-2985-4716-a12f-7b0badd3a1d3.png)
 
-* int n 변수 선언 (7번째 줄)
-* do-while문으로 몇 단 피라미드를 만들 것인지 물어보고 만약 0보다 작거나 같으면 다시 입력하라고 말하기 위해서
-  do-while문으로 작성함 (14번째 줄 ~ 17번째 줄)
-* 
+## 코드 해석
+```java
+do {
+	System.out.println("몇단 삼각형 입니까?");
+	n = sc.nextInt();
+}while (n <= 0); 
+```
+입력한 값이 0보다 작거나 같을 경우에 다시 입력하기위해서 이 코드를 작성했습니다.
+
+```java
+for(int i = 0; i < n; i++) {			// n단 피라미드 출력
+	for(int j = 0; j < n-i-1; j++) {	// 공백 출력 for문 
+	System.out.print(" ");			// 공백 출력
+	}	
+	for(int j = 0; j < i*2+1; j++) {	// 1, 3, 5, 7, 9... 2씩 늘어나는 for문
+	System.out.print("*");			// 별 출력
+	}
+	System.out.println();			// 줄바꿈 
+}
+```
+* 첫번째 for문은 줄바꿈을 위해서 작성하였습니다. <br\>
+* 두번째 for문은 공백을 출력하기 위하여 작성하였는데 반복 조건이 n-i-1인 이유는 
